@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +8,6 @@
 <title>For Allie ♡</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
 
 *{
@@ -23,16 +23,14 @@ html{
 body{
     font-family:"DM Sans",sans-serif;
     background:
-        radial-gradient(circle at 10% 10%,#ff6b78 0 3px,transparent 4px),
-        radial-gradient(circle at 80% 20%,#ff9ba5 0 4px,transparent 5px),
-        linear-gradient(135deg,#7f001b,#b00027,#d4143d,#8f0024);
-    background-size:180px 180px,240px 240px,100% 100%;
+        radial-gradient(circle at 15% 15%,rgba(255,255,255,.12) 0 2px,transparent 3px),
+        radial-gradient(circle at 80% 30%,rgba(255,120,150,.15) 0 3px,transparent 4px),
+        linear-gradient(135deg,#35000e,#720019,#b00032,#4a0014);
+    background-size:160px 160px,220px 220px,100% 100%;
     color:#fff;
     min-height:100vh;
     overflow-x:hidden;
 }
-
-/* PARTICLES */
 
 .particle{
     position:fixed;
@@ -52,15 +50,9 @@ body{
 .p5{left:45%;top:35%;animation-delay:3s}
 
 @keyframes float{
-    0%,100%{
-        transform:translateY(0) scale(1);
-    }
-    50%{
-        transform:translateY(-35px) scale(1.5);
-    }
+    0%,100%{transform:translateY(0) scale(1)}
+    50%{transform:translateY(-35px) scale(1.5)}
 }
-
-/* NAV */
 
 nav{
     position:fixed;
@@ -72,8 +64,8 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(92,0,21,.75);
-    backdrop-filter:blur(15px);
+    background:rgba(35,0,10,.78);
+    backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(255,255,255,.15);
 }
 
@@ -100,8 +92,6 @@ nav{
     background:#e63955;
 }
 
-/* SECTIONS */
-
 section{
     min-height:100vh;
     padding:110px 7%;
@@ -118,24 +108,22 @@ section.active{
 @keyframes appear{
     from{
         opacity:0;
-        transform:translateY(25px);
+        transform:translateY(25px)
     }
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:translateY(0)
     }
 }
 
-/* CARD */
-
 .card{
     width:min(1000px,100%);
-    background:rgba(80,0,18,.78);
+    background:rgba(55,0,15,.78);
     border:1px solid rgba(255,180,190,.3);
     border-radius:30px;
     padding:45px;
     box-shadow:
-        0 25px 80px rgba(40,0,10,.45),
+        0 25px 80px rgba(20,0,5,.55),
         inset 0 0 40px rgba(255,70,100,.08);
     backdrop-filter:blur(14px);
 }
@@ -163,68 +151,97 @@ button{
     font-family:inherit;
 }
 
-/* BUTTON */
-
 .main-btn{
     margin-top:25px;
     padding:15px 25px;
     border:0;
     border-radius:30px;
-    background:#ff4564;
+    background:linear-gradient(135deg,#ff5573,#c91540);
     color:white;
     font-weight:700;
     cursor:pointer;
-    box-shadow:0 8px 0 #85001d;
+    box-shadow:0 8px 0 #650018;
     transition:.25s;
 }
 
 .main-btn:hover{
     transform:translateY(-4px);
-    box-shadow:0 12px 0 #85001d;
+    box-shadow:0 12px 0 #650018;
 }
 
 .main-btn:active{
     transform:translateY(3px);
-    box-shadow:0 4px 0 #85001d;
+    box-shadow:0 4px 0 #650018;
 }
 
 /* PASSWORD */
 
 #passwordPage{
     text-align:center;
-}
-
-.lock{
-    font-size:4rem;
-    margin-bottom:15px;
-    animation:lockBounce 2s infinite;
-}
-
-@keyframes lockBounce{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
+    position:relative;
 }
 
 .password-box{
-    max-width:500px;
+    max-width:520px;
     margin:auto;
+    padding:50px 35px;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),
+        rgba(50,0,14,.9);
+    border:1px solid rgba(255,150,170,.4);
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.5),
+        0 0 50px rgba(255,40,90,.12);
+}
+
+/* EMBEDDED CAT */
+
+.password-cat{
+    width:150px;
+    height:150px;
+    margin:0 auto 20px;
+    display:block;
+    animation:catFloat 3s ease-in-out infinite;
+    filter:drop-shadow(0 15px 15px rgba(0,0,0,.4));
+}
+
+@keyframes catFloat{
+    0%,100%{
+        transform:translateY(0) rotate(-2deg)
+    }
+    50%{
+        transform:translateY(-12px) rotate(2deg)
+    }
+}
+
+.lock{
+    font-size:1.2rem;
+    margin-bottom:10px;
+    color:#ff9aaa;
+    letter-spacing:2px;
+}
+
+.password-box h2{
+    margin-bottom:12px;
 }
 
 .password-input{
     width:100%;
-    padding:15px 20px;
+    padding:16px 20px;
     margin-top:20px;
     border:2px solid #ff6078;
     border-radius:30px;
-    background:#4d0012;
+    background:#29000b;
     color:white;
     outline:none;
     text-align:center;
     font-size:1.1rem;
+    transition:.3s;
+}
+
+.password-input:focus{
+    border-color:#ff9aaa;
+    box-shadow:0 0 20px rgba(255,70,100,.2);
 }
 
 .password-input::placeholder{
@@ -243,18 +260,21 @@ button{
     display:none;
 }
 
-/* OPENING */
+/* CAT STICKER */
 
-#opening{
-    text-align:center;
-}
-
-.opening-cat{
-    width:230px;
-    height:230px;
+.cat-sticker{
+    width:150px;
+    height:150px;
     object-fit:contain;
+    display:block;
+    margin:auto;
     animation:breathe 3s infinite ease-in-out;
     filter:drop-shadow(0 15px 20px rgba(30,0,10,.5));
+}
+
+.small{
+    margin-top:15px;
+    color:#ffb5c0;
 }
 
 @keyframes breathe{
@@ -264,11 +284,6 @@ button{
     50%{
         transform:translateY(-12px) rotate(2deg);
     }
-}
-
-.small{
-    margin-top:15px;
-    color:#ffb5c0;
 }
 
 /* HOME */
@@ -287,17 +302,17 @@ button{
 
 @keyframes wiggle{
     0%,90%,100%{
-        transform:rotate(0);
+        transform:rotate(0)
     }
     93%{
-        transform:rotate(-5deg);
+        transform:rotate(-5deg)
     }
     96%{
-        transform:rotate(5deg);
+        transform:rotate(5deg)
     }
 }
 
-/* 💐 EMOJI BOUQUET */
+/* FLOWER */
 
 .flower-area{
     margin:30px auto;
@@ -318,11 +333,10 @@ button{
 
 @keyframes bouquetFloat{
     0%,100%{
-        transform:translateY(0) rotate(-2deg);
+        transform:translateY(0) rotate(-2deg)
     }
-
     50%{
-        transform:translateY(-10px) rotate(2deg);
+        transform:translateY(-10px) rotate(2deg)
     }
 }
 
@@ -365,6 +379,26 @@ button{
     color:#ffc6ce;
 }
 
+/* BACK BUTTON FOR EVERY CHOICE */
+
+.choice-back{
+    display:block;
+    margin:30px auto 0;
+    padding:12px 25px;
+    border-radius:25px;
+    border:1px solid #ff7187;
+    background:#85001d;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+    transition:.25s;
+}
+
+.choice-back:hover{
+    background:#b0002c;
+    transform:translateY(-3px);
+}
+
 /* LETTER */
 
 .letter{
@@ -388,12 +422,11 @@ button{
 }
 
 .letter-cat{
-    position:absolute;
-    right:20px;
-    top:-100px;
-    width:140px;
-    height:140px;
+    width:130px;
+    height:130px;
     object-fit:contain;
+    display:block;
+    margin:0 auto 10px;
     animation:floatCat 4s infinite ease-in-out;
 }
 
@@ -421,6 +454,8 @@ button{
     width:170px;
     height:170px;
     object-fit:contain;
+    display:block;
+    margin:auto;
     animation:musicBounce .8s infinite alternate;
 }
 
@@ -498,7 +533,7 @@ button{
     color:white;
 }
 
-/* ANIMATION PAGE */
+/* ANIMATION */
 
 .animation-page{
     text-align:center;
@@ -652,8 +687,6 @@ button{
     animation-delay:.4s;
 }
 
-/* CAT HOLDING FLOWERS */
-
 .bouquet-cat{
     width:150px;
     height:150px;
@@ -772,6 +805,8 @@ button{
     width:220px;
     height:220px;
     object-fit:contain;
+    display:block;
+    margin:auto;
     animation:finalFloat 3s infinite ease-in-out;
 }
 
@@ -804,30 +839,10 @@ button{
     transform:scale(1);
 }
 
-/* BACK BUTTON */
-
-.back-btn{
-    background:#85001d;
-    color:white;
-    border:1px solid #ff7187;
-    padding:12px 22px;
-    border-radius:25px;
-    cursor:pointer;
-    margin-top:25px;
-}
-
-.back-btn:hover{
-    background:#b0002c;
-}
-
-/* RESPONSIVE */
-
 @media(max-width:1000px){
-
     .menu{
         grid-template-columns:repeat(3,1fr);
     }
-
 }
 
 @media(max-width:800px){
@@ -848,14 +863,6 @@ button{
         grid-template-columns:1fr;
     }
 
-    .letter-cat{
-        position:relative;
-        right:auto;
-        top:auto;
-        display:block;
-        margin:0 auto 10px;
-    }
-
     .party-cat{
         width:90px;
         height:90px;
@@ -865,7 +872,6 @@ button{
         width:125px;
         height:125px;
     }
-
 }
 
 @media(max-width:500px){
@@ -880,11 +886,6 @@ button{
 
     .menu{
         grid-template-columns:1fr;
-    }
-
-    .opening-cat{
-        width:180px;
-        height:180px;
     }
 
     .emoji-bouquet{
@@ -903,9 +904,7 @@ button{
         width:80px;
         height:80px;
     }
-
 }
-
 </style>
 </head>
 
@@ -919,254 +918,395 @@ button{
 
 <nav>
 
-    <div class="logo">
-        FOR ALLIE ♡
-    </div>
+<div class="logo">
+FOR ALLIE ♡
+</div>
 
-    <div class="navlinks">
+<div class="navlinks">
 
-        <button onclick="showPage('home')">
-            Home
-        </button>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('letterPage')">Letter</button>
+<button onclick="showPage('musicPage')">Song</button>
+<button onclick="showPage('thoughtPage')">Thoughts</button>
+<button onclick="showPage('animationPage')">Animation</button>
+<button onclick="showPage('finalPage')">Final</button>
 
-        <button onclick="showPage('letterPage')">
-            Letter
-        </button>
-
-        <button onclick="showPage('musicPage')">
-            Song
-        </button>
-
-        <button onclick="showPage('thoughtPage')">
-            Thoughts
-        </button>
-
-        <button onclick="showPage('animationPage')">
-            Animation
-        </button>
-
-        <button onclick="showPage('finalPage')">
-            Final
-        </button>
-
-    </div>
+</div>
 
 </nav>
 
 
-<!-- PASSWORD -->
+<!-- =========================
+PASSWORD
+========================= -->
 
 <section id="passwordPage" class="active">
 
 <div class="card password-box">
 
-    <div class="lock">
-        🔒
-    </div>
+<svg class="password-cat"
+viewBox="0 0 200 200"
+xmlns="http://www.w3.org/2000/svg">
 
-    <h2>
-        Before you enter...
-    </h2>
+<path d="M38 78 L48 25 L82 58"
+fill="#ffb6c1"
+stroke="#650018"
+stroke-width="7"
+stroke-linejoin="round"/>
 
-    <p>
-        This little birthday corner is locked.
-    </p>
+<path d="M162 78 L152 25 L118 58"
+fill="#ffb6c1"
+stroke="#650018"
+stroke-width="7"
+stroke-linejoin="round"/>
 
-    <input
-        id="passwordInput"
-        class="password-input"
-        type="password"
-        placeholder="Enter the password"
-        onkeydown="if(event.key==='Enter')checkPassword()"
-    >
+<ellipse cx="100" cy="105"
+rx="67"
+ry="58"
+fill="#fff0f3"
+stroke="#650018"
+stroke-width="7"/>
 
-    <p class="hint">
-        Hint: <b>your birthday</b>
-    </p>
+<ellipse cx="76" cy="102"
+rx="7" ry="10"
+fill="#650018"/>
 
-    <p id="passwordError" class="error">
-        Nope 😭 Try again.
-    </p>
+<ellipse cx="124" cy="102"
+rx="7" ry="10"
+fill="#650018"/>
 
-    <button
-        class="main-btn"
-        onclick="checkPassword()">
-        UNLOCK ♡
-    </button>
+<circle cx="78" cy="98" r="2.5" fill="white"/>
+<circle cx="126" cy="98" r="2.5" fill="white"/>
+
+<path d="M94 116 Q100 111 106 116 Q100 123 94 116"
+fill="#ff6078"/>
+
+<path d="M100 122 Q94 132 87 127
+M100 122 Q106 132 113 127"
+fill="none"
+stroke="#650018"
+stroke-width="4"
+stroke-linecap="round"/>
+
+<path d="M43 115 L78 118
+M42 130 L77 126
+M157 115 L122 118
+M158 130 L123 126"
+stroke="#650018"
+stroke-width="3"
+stroke-linecap="round"/>
+
+<path d="M100 155
+C75 142 64 157 82 169
+C90 174 97 166 100 160
+C103 166 110 174 118 169
+C136 157 125 142 100 155Z"
+fill="#e52b4e"
+stroke="#650018"
+stroke-width="4"/>
+
+</svg>
+
+<div class="lock">
+♡ A LITTLE SECRET ♡
+</div>
+
+<h2>
+Before you enter...
+</h2>
+
+<p>
+This little birthday corner is locked.
+</p>
+
+<input
+id="passwordInput"
+class="password-input"
+type="password"
+placeholder="Enter the password"
+onkeydown="if(event.key==='Enter')checkPassword()"
+>
+
+<p class="hint">
+Hint: <b>it's a special date ♡</b>
+</p>
+
+<p id="passwordError" class="error">
+Nope 😭 Try again.
+</p>
+
+<button
+class="main-btn"
+onclick="checkPassword()">
+UNLOCK ♡
+</button>
 
 </div>
 
 </section>
 
 
-<!-- OPENING -->
+<!-- =========================
+OPENING
+========================= -->
 
 <section id="opening">
 
 <div class="card">
 
-    <img
-        src="assets/cat1.png"
-        class="opening-cat"
-        alt="cat sticker"
-    >
+<svg class="cat-sticker opening-cat"
+viewBox="0 0 200 200"
+xmlns="http://www.w3.org/2000/svg">
 
-    <p class="small">
-        meow.
-    </p>
+<path d="M38 78 L48 25 L82 58"
+fill="#ffb6c1"
+stroke="#650018"
+stroke-width="7"/>
 
-    <h1>
-        A little birthday thing<br>
-        for Allie.
-    </h1>
+<path d="M162 78 L152 25 L118 58"
+fill="#ffb6c1"
+stroke="#650018"
+stroke-width="7"/>
 
-    <p>
-        I made something for you.
-        <br>
-        Please don't judge the cat.
-    </p>
+<ellipse cx="100" cy="105"
+rx="67" ry="58"
+fill="#fff0f3"
+stroke="#650018"
+stroke-width="7"/>
 
-    <button
-        class="main-btn"
-        onclick="showPage('home')">
-        OPEN IT →
-    </button>
+<ellipse cx="76" cy="102" rx="7" ry="10" fill="#650018"/>
+<ellipse cx="124" cy="102" rx="7" ry="10" fill="#650018"/>
+
+<circle cx="78" cy="98" r="2.5" fill="white"/>
+<circle cx="126" cy="98" r="2.5" fill="white"/>
+
+<path d="M94 116 Q100 111 106 116 Q100 123 94 116"
+fill="#ff6078"/>
+
+<path d="M100 122 Q94 132 87 127
+M100 122 Q106 132 113 127"
+fill="none"
+stroke="#650018"
+stroke-width="4"
+stroke-linecap="round"/>
+
+<path d="M43 115 L78 118
+M42 130 L77 126
+M157 115 L122 118
+M158 130 L123 126"
+stroke="#650018"
+stroke-width="3"/>
+
+<path d="M100 155
+C75 142 64 157 82 169
+C90 174 97 166 100 160
+C103 166 110 174 118 169
+C136 157 125 142 100 155Z"
+fill="#e52b4e"
+stroke="#650018"
+stroke-width="4"/>
+
+</svg>
+
+<p class="small">
+meow.
+</p>
+
+<h1>
+A little birthday thing<br>
+for Allie.
+</h1>
+
+<p>
+I made something for you.
+<br>
+Please don't judge the cat.
+</p>
+
+<button class="main-btn"
+onclick="showPage('home')">
+OPEN IT →
+</button>
 
 </div>
 
 </section>
 
 
-<!-- HOME -->
+<!-- =========================
+HOME
+========================= -->
 
 <section id="home">
 
 <div class="card home-content">
 
-    <img
-        src="assets/cat5.png"
-        class="home-cat"
-        alt="cat sticker"
-    >
+<svg class="home-cat"
+viewBox="0 0 200 200"
+xmlns="http://www.w3.org/2000/svg">
 
-    <h1>
-        Happy Birthday, Allie.
-    </h1>
+<path d="M38 78 L48 25 L82 58"
+fill="#ffb6c1"
+stroke="#650018"
+stroke-width="7"/>
 
-    <p>
-        Welcome to your little birthday corner.
-    </p>
+<path d="M162 78 L152 25 L118 58"
+fill="#ffb6c1"
+stroke="#650018"
+stroke-width="7"/>
 
-    <p>
-        I couldn't send you an actual gift through the screen,
-        so I made this instead.
-    </p>
+<ellipse cx="100" cy="105"
+rx="67" ry="58"
+fill="#fff0f3"
+stroke="#650018"
+stroke-width="7"/>
 
+<ellipse cx="76" cy="102" rx="7" ry="10" fill="#650018"/>
+<ellipse cx="124" cy="102" rx="7" ry="10" fill="#650018"/>
 
-    <!-- 💐 ACTUAL BOUQUET EMOJI -->
+<circle cx="78" cy="98" r="2.5" fill="white"/>
+<circle cx="126" cy="98" r="2.5" fill="white"/>
 
-    <div class="flower-area">
+<path d="M94 116 Q100 111 106 116 Q100 123 94 116"
+fill="#ff6078"/>
 
-        <div class="emoji-bouquet">
-            💐
+<path d="M100 122 Q94 132 87 127
+M100 122 Q106 132 113 127"
+fill="none"
+stroke="#650018"
+stroke-width="4"/>
+
+<path d="M43 115 L78 118
+M42 130 L77 126
+M157 115 L122 118
+M158 130 L123 126"
+stroke="#650018"
+stroke-width="3"/>
+
+<path d="M100 155
+C75 142 64 157 82 169
+C90 174 97 166 100 160
+C103 166 110 174 118 169
+C136 157 125 142 100 155Z"
+fill="#e52b4e"
+stroke="#650018"
+stroke-width="4"/>
+
+</svg>
+
+<h1>
+Happy Birthday, Allie.
+</h1>
+
+<p>
+Welcome to your little birthday corner.
+</p>
+
+<p>
+I couldn't send you an actual gift through the screen,
+so I made this instead.
+</p>
+
+<div class="flower-area">
+
+    <div class="emoji-bouquet">
+        💐
+    </div>
+
+</div>
+
+<p>
+    A little bouquet because flowers seemed appropriate.
+</p>
+
+<div class="menu">
+
+    <div class="menu-card"
+         onclick="showPage('letterPage')">
+
+        <div class="cat-sticker">
+            🐱
         </div>
+
+        <h3>A Letter</h3>
+
+        <p>
+            Things I wanted to say to you.
+        </p>
 
     </div>
 
-    <p>
-        A little bouquet because flowers seemed appropriate.
-    </p>
 
+    <div class="menu-card"
+         onclick="showPage('musicPage')">
 
-    <!-- CHOICES -->
-
-    <div class="menu">
-
-        <div
-            class="menu-card"
-            onclick="showPage('letterPage')">
-
-            <img src="assets/cat2.png">
-
-            <h3>
-                A Letter
-            </h3>
-
-            <p>
-                Things I wanted to say to you.
-            </p>
-
+        <div class="cat-sticker">
+            🐱
         </div>
 
+        <h3>A Song</h3>
 
-        <div
-            class="menu-card"
-            onclick="showPage('musicPage')">
-
-            <img src="assets/cat3.png">
-
-            <h3>
-                A Song
-            </h3>
-
-            <p>
-                Something I wanted to include here.
-            </p>
-
-        </div>
-
-
-        <div
-            class="menu-card"
-            onclick="showPage('thoughtPage')">
-
-            <img src="assets/cat6.png">
-
-            <h3>
-                Random Thoughts
-            </h3>
-
-            <p>
-                A few things I wanted you to know.
-            </p>
-
-        </div>
-
-
-        <div
-            class="menu-card"
-            onclick="showPage('animationPage')">
-
-            <img src="assets/cat8.png">
-
-            <h3>
-                Animation 🎂
-            </h3>
-
-            <p>
-                A little birthday surprise.
-            </p>
-
-        </div>
-
-
-        <div
-            class="menu-card"
-            onclick="showPage('finalPage')">
-
-            <img src="assets/cat8.png">
-
-            <h3>
-                One Last Thing
-            </h3>
-
-            <p>
-                Save this one for last.
-            </p>
-
-        </div>
+        <p>
+            Something I wanted to include here.
+        </p>
 
     </div>
+
+
+    <div class="menu-card"
+         onclick="showPage('thoughtPage')">
+
+        <div class="cat-sticker">
+            🐱
+        </div>
+
+        <h3>Random Thoughts</h3>
+
+        <p>
+            A few things I wanted you to know.
+        </p>
+
+    </div>
+
+
+    <div class="menu-card"
+         onclick="showPage('animationPage')">
+
+        <div class="cat-sticker">
+            🐱
+        </div>
+
+        <h3>Animation 🎂</h3>
+
+        <p>
+            A little birthday surprise.
+        </p>
+
+    </div>
+
+
+    <div class="menu-card"
+         onclick="showPage('finalPage')">
+
+        <div class="cat-sticker">
+            🐱
+        </div>
+
+        <h3>One Last Thing</h3>
+
+        <p>
+            Save this one for last.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- BACK BUTTON -->
+<button class="back-btn"
+        onclick="showPage('home')">
+    ← Back to choices
+</button>
 
 </div>
 
@@ -1181,11 +1321,9 @@ button{
 
     <div class="letter">
 
-        <img
-            src="assets/cat7.png"
-            class="letter-cat"
-            alt="cat sticker"
-        >
+        <div class="cat-sticker letter-cat">
+            🐱
+        </div>
 
         <h2>
             Hello there, Allie.
@@ -1218,7 +1356,7 @@ button{
             You can always talk to me whenever you need someone.
         </p>
 
-                <p>
+        <p>
             Do you know I still remember the day you first talked to me
             on Instagram? I still remember it, even though I completely
             forgot what our conversation was about.
@@ -1281,6 +1419,11 @@ button{
 
     </div>
 
+    <button class="back-btn"
+            onclick="showPage('home')">
+        ← Back to choices
+    </button>
+
 </div>
 
 </section>
@@ -1292,11 +1435,13 @@ button{
 
 <div class="card music">
 
-    <img src="assets/cat4.png"
-         class="music-cat"
-         alt="cat sticker">
+    <div class="cat-sticker music-cat">
+        🐱
+    </div>
 
-    <h2>Today's Song</h2>
+    <h2>
+        Today's Song
+    </h2>
 
     <div class="song-box">
 
@@ -1324,6 +1469,11 @@ button{
 
     </div>
 
+    <button class="back-btn"
+            onclick="showPage('home')">
+        ← Back to choices
+    </button>
+
 </div>
 
 </section>
@@ -1335,7 +1485,9 @@ button{
 
 <div class="card">
 
-    <h2>Random Thoughts</h2>
+    <h2>
+        Random Thoughts
+    </h2>
 
     <p>
         Things I wanted you to know.
@@ -1345,7 +1497,9 @@ button{
 
         <div class="thought">
 
-            <img src="assets/cat5.png">
+            <div class="cat-sticker">
+                🐱
+            </div>
 
             <p>
                 I'm really glad I met you.
@@ -1353,9 +1507,12 @@ button{
 
         </div>
 
+
         <div class="thought">
 
-            <img src="assets/cat2.png">
+            <div class="cat-sticker">
+                🐱
+            </div>
 
             <p>
                 I hope you know you're appreciated.
@@ -1363,9 +1520,12 @@ button{
 
         </div>
 
+
         <div class="thought">
 
-            <img src="assets/cat6.png">
+            <div class="cat-sticker">
+                🐱
+            </div>
 
             <p>
                 I hope we stay friends for a long time.
@@ -1373,9 +1533,12 @@ button{
 
         </div>
 
+
         <div class="thought">
 
-            <img src="assets/cat1.png">
+            <div class="cat-sticker">
+                🐱
+            </div>
 
             <p>
                 I hope this year is good to you.
@@ -1383,9 +1546,12 @@ button{
 
         </div>
 
+
         <div class="thought">
 
-            <img src="assets/cat3.png">
+            <div class="cat-sticker">
+                🐱
+            </div>
 
             <p>
                 Keep being your silly self.
@@ -1393,9 +1559,12 @@ button{
 
         </div>
 
+
         <div class="thought">
 
-            <img src="assets/cat7.png">
+            <div class="cat-sticker">
+                🐱
+            </div>
 
             <p>
                 I'm lucky to have you as a friend.
@@ -1405,10 +1574,14 @@ button{
 
     </div>
 
+    <button class="back-btn"
+            onclick="showPage('home')">
+        ← Back to choices
+    </button>
+
 </div>
 
 </section>
-
 
 <!-- ANIMATION -->
 
@@ -1437,7 +1610,9 @@ button{
 
         <div class="birthday-text">
             <h2>Happy Birthday, Allie! ♡</h2>
-            <p>Look at all these little cats celebrating with you 😭</p>
+            <p>
+                Look at all these little cats celebrating with you 😭
+            </p>
         </div>
 
         <div class="cake">
@@ -1456,25 +1631,31 @@ button{
 
         </div>
 
-        <img src="assets/cat8.png"
-             class="bouquet-cat"
-             alt="cat holding flowers">
+        <!-- GENERATED CAT -->
+        <div class="bouquet-cat cat-sticker">
+            🐱💐
+        </div>
 
         <div class="party-cats">
 
-            <img src="assets/cat1.png"
-                 class="party-cat">
+            <!-- GENERATED CATS -->
+            <div class="party-cat cat-sticker">
+                🐱
+            </div>
 
-            <img src="assets/cat5.png"
-                 class="party-cat">
+            <div class="party-cat cat-sticker">
+                🐱
+            </div>
 
-            <img src="assets/cat3.png"
-                 class="party-cat">
+            <div class="party-cat cat-sticker">
+                🐱
+            </div>
 
         </div>
 
     </div>
 
+    <!-- BACK BUTTON -->
     <button class="back-btn"
             onclick="showPage('home')">
         ← Back to choices
@@ -1491,11 +1672,14 @@ button{
 
 <div class="card final">
 
-    <img src="assets/cat8.png"
-         class="final-cat"
-         alt="cat sticker">
+    <!-- GENERATED CAT -->
+    <div class="final-cat cat-sticker">
+        🐱
+    </div>
 
-    <h2>One last thing.</h2>
+    <h2>
+        One last thing.
+    </h2>
 
     <p>
         I know this is just a little website,
@@ -1550,6 +1734,12 @@ button{
         labu
     </div>
 
+    <!-- BACK BUTTON -->
+    <button class="back-btn"
+            onclick="showPage('home')">
+        ← Back to choices
+    </button>
+
 </div>
 
 </section>
@@ -1569,6 +1759,7 @@ function showPage(page){
 
     if(selectedPage){
         selectedPage.classList.add("active");
+
         window.scrollTo({
             top:0,
             behavior:"smooth"
@@ -1625,7 +1816,7 @@ function showLabu(){
 }
 
 
-/* BACK TO HOME WHEN USING BROWSER BACK */
+/* START WITH PASSWORD */
 
 window.addEventListener("load", function(){
 
@@ -1637,51 +1828,3 @@ window.addEventListener("load", function(){
 
 </body>
 </html>
-
-
-<!-- CAT 1 -->
-<img src="assets/cat1.png"
-     alt="Cat 1"
-     class="opening-cat">
-
-
-<!-- CAT 2 -->
-<img src="assets/cat2.png"
-     alt="Cat 2"
-     class="menu-cat">
-
-
-<!-- CAT 3 -->
-<img src="assets/cat3.png"
-     alt="Cat 3"
-     class="menu-cat">
-
-
-<!-- CAT 4 -->
-<img src="assets/cat4.png"
-     alt="Cat 4"
-     class="music-cat">
-
-
-<!-- CAT 5 -->
-<img src="assets/cat5.png"
-     alt="Cat 5"
-     class="home-cat">
-
-
-<!-- CAT 6 -->
-<img src="assets/cat6.png"
-     alt="Cat 6"
-     class="thought-cat">
-
-
-<!-- CAT 7 -->
-<img src="assets/cat7.png"
-     alt="Cat 7"
-     class="letter-cat">
-
-
-<!-- CAT 8 -->
-<img src="assets/cat8.png"
-     alt="Cat 8"
-     class="final-cat">
