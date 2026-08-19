@@ -3,1092 +3,1635 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Allie ♡</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-  font-family: "DM Sans", sans-serif;
-  color: #24171b;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background:
-    radial-gradient(circle at 10% 15%, #ffb6c1 0, transparent 25%),
-    radial-gradient(circle at 90% 25%, #8fc4ff 0, transparent 27%),
-    linear-gradient(135deg, #fff3f5, #edf5ff);
+html{
+    scroll-behavior:smooth;
 }
 
-/* BACKGROUND EFFECTS */
-
-.bg {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(2px);
+body{
+    font-family:"DM Sans",sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,#ff6b78 0 3px,transparent 4px),
+        radial-gradient(circle at 80% 20%,#ff9ba5 0 4px,transparent 5px),
+        linear-gradient(135deg,#7f001b,#b00027,#d4143d,#8f0024);
+    background-size:180px 180px,240px 240px,100% 100%;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
-.bg1 {
-  width: 250px;
-  height: 250px;
-  background: #ef476f;
-  left: -130px;
-  top: 20%;
-  opacity: .25;
-  animation: float 8s infinite ease-in-out;
+/* PARTICLES */
+
+.particle{
+    position:fixed;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ff8797;
+    opacity:.55;
+    pointer-events:none;
+    animation:float 8s infinite ease-in-out;
 }
 
-.bg2 {
-  width: 300px;
-  height: 300px;
-  background: #3185d8;
-  right: -160px;
-  bottom: 10%;
-  opacity: .22;
-  animation: float 10s infinite ease-in-out reverse;
+.p1{left:8%;top:20%}
+.p2{left:20%;top:70%;animation-delay:2s}
+.p3{left:70%;top:15%;animation-delay:4s}
+.p4{left:90%;top:60%;animation-delay:1s}
+.p5{left:45%;top:35%;animation-delay:3s}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+    50%{
+        transform:translateY(-35px) scale(1.5);
+    }
 }
 
-@keyframes float {
-  50% {
-    transform: translateY(-35px);
-  }
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:100;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(92,0,21,.75);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.15);
 }
 
-/* NAVIGATION */
-
-header {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 14px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255,255,255,.78);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(0,0,0,.06);
+.logo{
+    font-weight:700;
+    letter-spacing:1px;
 }
 
-.logo {
-  color: #bd203c;
-  font-weight: 700;
-  cursor: pointer;
+.navlinks{
+    display:flex;
+    gap:8px;
 }
 
-nav {
-  display: flex;
-  gap: 5px;
-  overflow-x: auto;
+.navlinks button{
+    border:0;
+    background:transparent;
+    color:white;
+    padding:8px 12px;
+    border-radius:20px;
+    cursor:pointer;
 }
 
-nav button {
-  border: 0;
-  background: transparent;
-  padding: 8px 12px;
-  border-radius: 20px;
-  cursor: pointer;
-  white-space: nowrap;
+.navlinks button:hover{
+    background:#e63955;
 }
 
-nav button:hover {
-  background: #ffe0e6;
+/* SECTIONS */
+
+section{
+    min-height:100vh;
+    padding:110px 7%;
+    display:none;
+    align-items:center;
+    justify-content:center;
 }
 
-/* PAGES */
-
-.page {
-  display: none;
-  min-height: 100vh;
-  padding: 110px 6% 70px;
-  justify-content: center;
-  align-items: center;
+section.active{
+    display:flex;
+    animation:appear .7s ease;
 }
 
-.page.active {
-  display: flex;
-  animation: pageIn .65s ease;
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-@keyframes pageIn {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* CARD */
+
+.card{
+    width:min(1000px,100%);
+    background:rgba(80,0,18,.78);
+    border:1px solid rgba(255,180,190,.3);
+    border-radius:30px;
+    padding:45px;
+    box-shadow:
+        0 25px 80px rgba(40,0,10,.45),
+        inset 0 0 40px rgba(255,70,100,.08);
+    backdrop-filter:blur(14px);
 }
 
-.card {
-  width: min(920px, 100%);
-  padding: clamp(28px, 6vw, 60px);
-  background: rgba(255,255,255,.9);
-  border-radius: 30px;
-  border: 1px solid rgba(255,255,255,.9);
-  box-shadow: 0 25px 70px rgba(55,25,35,.13);
-  position: relative;
-  overflow: hidden;
+h1,h2{
+    font-family:"Playfair Display",serif;
 }
 
-.card:after {
-  content: "";
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: #dcecff;
-  right: -80px;
-  top: -80px;
-  opacity: .55;
+h1{
+    font-size:clamp(3rem,7vw,6rem);
+    line-height:1;
 }
 
-h1,
-h2 {
-  font-family: "Playfair Display", serif;
+h2{
+    font-size:clamp(2rem,5vw,3.5rem);
+    margin-bottom:20px;
 }
 
-h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
-  color: #b51e39;
-  line-height: .95;
+p{
+    line-height:1.8;
+    color:#ffe9ed;
 }
 
-h2 {
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  color: #b51e39;
-  margin-bottom: 20px;
-}
-
-h3 {
-  margin-bottom: 12px;
-}
-
-p {
-  line-height: 1.8;
-  margin: 10px 0;
-}
-
-.small {
-  color: #777;
-  font-size: .9rem;
-}
-
-/* CAT */
-
-.cat {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  animation: catFloat 4s ease-in-out infinite;
-}
-
-@keyframes catFloat {
-  0%,100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(2deg);
-  }
-}
-
-.cat-area {
-  text-align: center;
-  margin-bottom: 20px;
+button{
+    font-family:inherit;
 }
 
 /* BUTTON */
 
-.main-btn {
-  margin-top: 25px;
-  border: none;
-  padding: 14px 26px;
-  border-radius: 30px;
-  background: linear-gradient(100deg,#b91f3b,#e3425c);
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 9px 22px rgba(185,31,59,.25);
-  transition: .25s;
+.main-btn{
+    margin-top:25px;
+    padding:15px 25px;
+    border:0;
+    border-radius:30px;
+    background:#ff4564;
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 8px 0 #85001d;
+    transition:.25s;
 }
 
-.main-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(185,31,59,.3);
+.main-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 0 #85001d;
 }
 
-.back {
-  margin-top: 25px;
-  border: 0;
-  padding: 10px 18px;
-  border-radius: 20px;
-  background: #e8f2ff;
-  cursor: pointer;
+.main-btn:active{
+    transform:translateY(3px);
+    box-shadow:0 4px 0 #85001d;
+}
+
+/* PASSWORD */
+
+#passwordPage{
+    text-align:center;
+}
+
+.lock{
+    font-size:4rem;
+    margin-bottom:15px;
+    animation:lockBounce 2s infinite;
+}
+
+@keyframes lockBounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.password-box{
+    max-width:500px;
+    margin:auto;
+}
+
+.password-input{
+    width:100%;
+    padding:15px 20px;
+    margin-top:20px;
+    border:2px solid #ff6078;
+    border-radius:30px;
+    background:#4d0012;
+    color:white;
+    outline:none;
+    text-align:center;
+    font-size:1.1rem;
+}
+
+.password-input::placeholder{
+    color:#ffb6c0;
+}
+
+.hint{
+    margin-top:12px;
+    font-size:.9rem;
+    color:#ffb5c0;
+}
+
+.error{
+    margin-top:12px;
+    color:#ff9aaa;
+    display:none;
 }
 
 /* OPENING */
 
-.center {
-  text-align: center;
+#opening{
+    text-align:center;
 }
 
-.delivery {
-  display: inline-block;
-  padding: 12px 20px;
-  background: #e8f3ff;
-  border: 1px solid #c7def8;
-  border-radius: 14px;
-  margin: 15px 0;
-  font-weight: 700;
+.opening-cat{
+    width:230px;
+    height:230px;
+    object-fit:contain;
+    animation:breathe 3s infinite ease-in-out;
+    filter:drop-shadow(0 15px 20px rgba(30,0,10,.5));
+}
+
+@keyframes breathe{
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+    50%{
+        transform:translateY(-12px) rotate(2deg);
+    }
+}
+
+.small{
+    margin-top:15px;
+    color:#ffb5c0;
 }
 
 /* HOME */
 
-.home p {
-  max-width: 650px;
-  margin: 15px auto;
+.home-content{
+    text-align:center;
 }
 
-.home {
-  text-align: center;
+.home-cat{
+    width:190px;
+    height:190px;
+    object-fit:contain;
+    margin-bottom:10px;
+    animation:wiggle 4s infinite;
 }
 
-.blue {
-  color: #3478c5;
+@keyframes wiggle{
+    0%,90%,100%{
+        transform:rotate(0);
+    }
+    93%{
+        transform:rotate(-5deg);
+    }
+    96%{
+        transform:rotate(5deg);
+    }
 }
 
-.menu {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 15px;
-  margin-top: 35px;
+/* 💐 EMOJI BOUQUET */
+
+.flower-area{
+    margin:30px auto;
+    height:190px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.menu-item {
-  padding: 22px 14px;
-  background: white;
-  border: 1px solid #eadce0;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: .25s;
+.emoji-bouquet{
+    font-size:125px;
+    line-height:1;
+    display:inline-block;
+    animation:bouquetFloat 3s infinite ease-in-out;
+    filter:drop-shadow(0 12px 12px rgba(40,0,10,.4));
 }
 
-.menu-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(60,30,40,.1);
-  border-color: #d93b55;
+@keyframes bouquetFloat{
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateY(-10px) rotate(2deg);
+    }
 }
 
-.menu-item strong {
-  display: block;
-  color: #bd233d;
-  margin-bottom: 8px;
+/* MENU */
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+    margin-top:35px;
 }
 
-.menu-item span {
-  color: #777;
-  font-size: .85rem;
+.menu-card{
+    padding:20px 12px;
+    border-radius:22px;
+    background:linear-gradient(145deg,#b4002d,#750019);
+    border:1px solid rgba(255,180,190,.2);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-10px) rotate(-1deg);
+    background:linear-gradient(145deg,#e52b4e,#8e0020);
+    box-shadow:0 15px 30px rgba(30,0,10,.35);
+}
+
+.menu-card img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+.menu-card h3{
+    margin-top:10px;
+}
+
+.menu-card p{
+    font-size:.8rem;
+    color:#ffc6ce;
 }
 
 /* LETTER */
 
-.letter {
-  background: #fffdf8;
-  border-left: 4px solid #c72a44;
-  padding: clamp(25px,5vw,45px);
+.letter{
+    background:#fff0f3;
+    color:#48000f;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:
+        0 20px 60px rgba(30,0,10,.4),
+        inset 0 0 30px rgba(180,0,40,.08);
+    position:relative;
 }
 
-.letter p {
-  font-family: Georgia, serif;
-  font-size: 1.05rem;
+.letter p{
+    color:#4c111c;
+    margin-bottom:17px;
 }
 
-.signature {
-  margin-top: 30px;
-  color: #bb2841;
-  font-style: italic;
+.letter h2{
+    color:#970020;
+}
+
+.letter-cat{
+    position:absolute;
+    right:20px;
+    top:-100px;
+    width:140px;
+    height:140px;
+    object-fit:contain;
+    animation:floatCat 4s infinite ease-in-out;
+}
+
+@keyframes floatCat{
+    0%,100%{
+        transform:translateY(0) rotate(3deg);
+    }
+    50%{
+        transform:translateY(-12px) rotate(-3deg);
+    }
+}
+
+.signature{
+    font-weight:700;
+    color:#a30025 !important;
 }
 
 /* MUSIC */
 
-.music {
-  text-align: center;
+.music{
+    text-align:center;
 }
 
-.record {
-  width: 175px;
-  height: 175px;
-  margin: 25px auto;
-  border-radius: 50%;
-  background:
-    repeating-radial-gradient(
-      circle,
-      #151515 0 5px,
-      #343434 6px 8px
-    );
-  display: grid;
-  place-items: center;
-  color: white;
-  font-size: 3rem;
-  box-shadow: 0 15px 35px rgba(0,0,0,.25);
+.music-cat{
+    width:170px;
+    height:170px;
+    object-fit:contain;
+    animation:musicBounce .8s infinite alternate;
 }
 
-.record.playing {
-  animation: spin 2s linear infinite;
+@keyframes musicBounce{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-12px) rotate(2deg);
+    }
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.song-box{
+    margin:30px auto;
+    max-width:650px;
+    padding:30px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#690016,#b50031,#e83255);
+    border:1px solid rgba(255,255,255,.2);
 }
 
-.lyrics {
-  display: none;
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 22px;
-  background: linear-gradient(135deg,#fff0f3,#edf6ff);
-  border: 1px solid #dddfe7;
+.song-title{
+    font-size:1.5rem;
+    font-weight:700;
 }
 
-.lyrics.show {
-  display: block;
+.lyrics{
+    margin-top:25px;
+    padding:20px;
+    border-left:3px solid #ff637b;
+    color:#ffd9df;
+    line-height:2;
+    opacity:0;
+    transform:translateY(20px);
+    transition:.7s;
 }
 
-.lyrics p {
-  font-family: Georgia, serif;
-  font-size: 1.2rem;
-  opacity: 0;
-  animation: lyric .7s forwards;
-}
-
-.lyrics p:nth-child(1) { animation-delay: .3s; }
-.lyrics p:nth-child(2) { animation-delay: 1.2s; }
-.lyrics p:nth-child(3) { animation-delay: 2.1s; }
-.lyrics p:nth-child(4) { animation-delay: 3s; }
-
-@keyframes lyric {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.lyrics.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* THOUGHTS */
 
-.thoughts {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 18px;
+.thoughts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:30px;
 }
 
-.thought {
-  padding: 25px;
-  background: white;
-  border-radius: 20px;
-  border: 1px solid #eee;
-  transition: .25s;
+.thought{
+    min-height:180px;
+    padding:25px;
+    border-radius:20px;
+    background:linear-gradient(145deg,#d21942,#87001f);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    transition:.3s;
 }
 
-.thought:hover {
-  transform: scale(1.03);
+.thought:hover{
+    transform:scale(1.04) rotate(1deg);
 }
 
-.thought:nth-child(odd) {
-  border-left: 4px solid #d52c48;
+.thought img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    margin-bottom:10px;
 }
 
-.thought:nth-child(even) {
-  border-left: 4px solid #3981d0;
+.thought p{
+    color:white;
 }
 
-/* GIFT */
+/* ANIMATION PAGE */
 
-.gift-page {
-  text-align: center;
+.animation-page{
+    text-align:center;
+    overflow:hidden;
 }
 
-.gift {
-  display: inline-block;
-  font-size: 7rem;
-  cursor: pointer;
-  animation: gift 2s infinite;
+.birthday-scene{
+    position:relative;
+    min-height:500px;
+    margin-top:15px;
+    border-radius:30px;
+    background:
+        radial-gradient(circle at 20% 15%,#ff7187 0 4px,transparent 5px),
+        radial-gradient(circle at 80% 20%,#ff9aaa 0 4px,transparent 5px),
+        linear-gradient(180deg,#a90029,#650014);
+    overflow:hidden;
+    border:2px solid rgba(255,180,190,.25);
+    box-shadow:inset 0 0 60px rgba(255,40,80,.2);
 }
 
-@keyframes gift {
-  50% {
-    transform: translateY(-12px) rotate(4deg);
-  }
+/* BALLOONS */
+
+.balloon{
+    position:absolute;
+    width:55px;
+    height:68px;
+    border-radius:50% 50% 45% 45%;
+    background:#ff4564;
+    animation:balloonFloat 3s infinite ease-in-out;
 }
 
-.final {
-  display: none;
-  max-width: 650px;
-  margin: 30px auto 0;
+.balloon:after{
+    content:"";
+    position:absolute;
+    width:1px;
+    height:90px;
+    background:#ffbdc7;
+    left:50%;
+    top:65px;
 }
 
-.final.show {
-  display: block;
-  animation: pageIn .8s ease;
+.balloon1{
+    left:8%;
+    top:40px;
 }
 
-/* LAST */
-
-.last {
-  text-align: center;
+.balloon2{
+    right:10%;
+    top:65px;
+    background:#d51c43;
+    animation-delay:.7s;
 }
 
-.last-heart {
-  font-size: 5rem;
-  color: #cf2944;
-  animation: heartbeat 1.2s infinite;
+.balloon3{
+    left:18%;
+    top:150px;
+    background:#ff6a80;
+    animation-delay:1.2s;
 }
 
-@keyframes heartbeat {
-  50% {
-    transform: scale(1.18);
-  }
+.balloon4{
+    right:20%;
+    top:150px;
+    background:#b9002e;
+    animation-delay:1.7s;
 }
 
-.labu {
-  font-family: "Playfair Display", serif;
-  color: #bd233d;
-  font-size: 3rem;
-  margin-top: 40px;
+@keyframes balloonFloat{
+    0%,100%{
+        transform:translateY(0) rotate(-3deg);
+    }
+    50%{
+        transform:translateY(-15px) rotate(3deg);
+    }
 }
 
 /* CONFETTI */
 
-.confetti {
-  position: fixed;
-  width: 8px;
-  height: 13px;
-  top: -20px;
-  z-index: 500;
-  pointer-events: none;
-  animation: fall 3.5s linear forwards;
+.confetti{
+    position:absolute;
+    width:9px;
+    height:20px;
+    background:#ff91a2;
+    animation:confettiFall 4s infinite linear;
 }
 
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(720deg);
-    opacity: 0;
-  }
+.c1{
+    left:30%;
+    top:-20px;
+    animation-delay:.2s;
 }
 
-/* MOBILE */
-
-@media(max-width:800px) {
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 7px;
-  }
-
-  nav {
-    width: 100%;
-  }
-
-  .menu {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .thoughts {
-    grid-template-columns: 1fr;
-  }
+.c2{
+    left:45%;
+    top:-30px;
+    animation-delay:1s;
 }
 
-@media(max-width:500px) {
-
-  .menu {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    border-radius: 22px;
-  }
-
-  .cat {
-    width: 145px;
-    height: 145px;
-  }
-
-  h1 {
-    font-size: 3.2rem;
-  }
+.c3{
+    left:60%;
+    top:-15px;
+    animation-delay:1.8s;
 }
+
+.c4{
+    left:75%;
+    top:-40px;
+    animation-delay:2.5s;
+}
+
+.c5{
+    left:90%;
+    top:-20px;
+    animation-delay:3s;
+}
+
+@keyframes confettiFall{
+    from{
+        transform:translateY(0) rotate(0);
+    }
+    to{
+        transform:translateY(550px) rotate(360deg);
+    }
+}
+
+/* PARTY CATS */
+
+.party-cats{
+    position:absolute;
+    bottom:35px;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:20px;
+}
+
+.party-cat{
+    width:115px;
+    height:115px;
+    object-fit:contain;
+    animation:catDance .8s infinite alternate ease-in-out;
+}
+
+.party-cat:nth-child(2){
+    animation-delay:.2s;
+}
+
+.party-cat:nth-child(3){
+    animation-delay:.4s;
+}
+
+/* CAT HOLDING FLOWERS */
+
+.bouquet-cat{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+    position:absolute;
+    left:50%;
+    bottom:115px;
+    transform:translateX(-50%);
+    animation:catCelebrate 1s infinite alternate ease-in-out;
+    z-index:5;
+}
+
+@keyframes catCelebrate{
+    from{
+        transform:translateX(-50%) translateY(0) rotate(-3deg);
+    }
+    to{
+        transform:translateX(-50%) translateY(-10px) rotate(3deg);
+    }
+}
+
+@keyframes catDance{
+    from{
+        transform:translateY(0) rotate(-3deg);
+    }
+    to{
+        transform:translateY(-12px) rotate(3deg);
+    }
+}
+
+/* CAKE */
+
+.cake{
+    position:absolute;
+    left:50%;
+    bottom:50px;
+    transform:translateX(-50%);
+    width:150px;
+    height:85px;
+    background:#ffb5c1;
+    border-radius:15px 15px 25px 25px;
+    border-bottom:15px solid #ff4564;
+    z-index:4;
+}
+
+.cake:before{
+    content:"";
+    position:absolute;
+    top:-35px;
+    left:15px;
+    width:120px;
+    height:45px;
+    background:#fff0f3;
+    border-radius:50%;
+    box-shadow:0 10px 0 #ff8fa0;
+}
+
+.candle{
+    position:absolute;
+    width:8px;
+    height:35px;
+    background:#ff4564;
+    top:-62px;
+    z-index:6;
+}
+
+.candle1{left:38px}
+.candle2{left:70px}
+.candle3{left:102px}
+
+.flame{
+    position:absolute;
+    width:14px;
+    height:20px;
+    background:#ffd0d6;
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    top:-20px;
+    left:-3px;
+    animation:flame .5s infinite alternate;
+}
+
+@keyframes flame{
+    from{
+        transform:rotate(-45deg) scale(1);
+    }
+    to{
+        transform:rotate(-40deg) scale(1.15);
+    }
+}
+
+.birthday-text{
+    position:absolute;
+    top:35px;
+    width:100%;
+    text-align:center;
+    z-index:10;
+}
+
+.birthday-text h2{
+    color:white;
+    text-shadow:0 4px 10px rgba(50,0,10,.5);
+}
+
+.birthday-text p{
+    color:#ffdce1;
+}
+
+/* FINAL */
+
+.final{
+    text-align:center;
+}
+
+.final-cat{
+    width:220px;
+    height:220px;
+    object-fit:contain;
+    animation:finalFloat 3s infinite ease-in-out;
+}
+
+@keyframes finalFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.final-flower{
+    height:170px;
+    margin:20px auto;
+}
+
+.labu{
+    margin-top:35px;
+    font-family:"Playfair Display",serif;
+    font-size:3rem;
+    color:#ff91a2;
+    opacity:0;
+    transform:scale(.7);
+    transition:1s;
+}
+
+.labu.show{
+    opacity:1;
+    transform:scale(1);
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+    background:#85001d;
+    color:white;
+    border:1px solid #ff7187;
+    padding:12px 22px;
+    border-radius:25px;
+    cursor:pointer;
+    margin-top:25px;
+}
+
+.back-btn:hover{
+    background:#b0002c;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .menu{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .navlinks{
+        display:none;
+    }
+
+    .card{
+        padding:28px 20px;
+    }
+
+    .menu{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .thoughts{
+        grid-template-columns:1fr;
+    }
+
+    .letter-cat{
+        position:relative;
+        right:auto;
+        top:auto;
+        display:block;
+        margin:0 auto 10px;
+    }
+
+    .party-cat{
+        width:90px;
+        height:90px;
+    }
+
+    .bouquet-cat{
+        width:125px;
+        height:125px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:100px 18px 50px;
+    }
+
+    h1{
+        font-size:3rem;
+    }
+
+    .menu{
+        grid-template-columns:1fr;
+    }
+
+    .opening-cat{
+        width:180px;
+        height:180px;
+    }
+
+    .emoji-bouquet{
+        font-size:105px;
+    }
+
+    .birthday-scene{
+        min-height:450px;
+    }
+
+    .party-cats{
+        gap:2px;
+    }
+
+    .party-cat{
+        width:80px;
+        height:80px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="bg bg1"></div>
-<div class="bg bg2"></div>
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
 
-<header>
+<nav>
 
-  <div class="logo" onclick="showPage('home')">
-    ALLIE'S BIRTHDAY
-  </div>
+    <div class="logo">
+        FOR ALLIE ♡
+    </div>
 
-  <nav>
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('letter')">Letter</button>
-    <button onclick="showPage('music')">Music</button>
-    <button onclick="showPage('thoughts')">Thoughts</button>
-    <button onclick="showPage('gift')">Gift</button>
-  </nav>
+    <div class="navlinks">
 
-</header>
+        <button onclick="showPage('home')">
+            Home
+        </button>
 
+        <button onclick="showPage('letterPage')">
+            Letter
+        </button>
 
-<!-- OPENING -->
+        <button onclick="showPage('musicPage')">
+            Song
+        </button>
 
-<section id="opening" class="page active">
+        <button onclick="showPage('thoughtPage')">
+            Thoughts
+        </button>
 
-  <div class="card center">
+        <button onclick="showPage('animationPage')">
+            Animation
+        </button>
 
-    <div class="cat-area">
-
-      <img
-        class="cat"
-        src="https://media.tenor.com/2roX3uxz_68AAAAi/cat-cute.gif"
-        alt="cat">
+        <button onclick="showPage('finalPage')">
+            Final
+        </button>
 
     </div>
 
-    <p class="small">meow.</p>
+</nav>
 
-    <h1>A tiny delivery<br>for you.</h1>
+
+<!-- PASSWORD -->
+
+<section id="passwordPage" class="active">
+
+<div class="card password-box">
+
+    <div class="lock">
+        🔒
+    </div>
+
+    <h2>
+        Before you enter...
+    </h2>
 
     <p>
-      Something small has arrived.
+        This little birthday corner is locked.
     </p>
 
-    <div class="delivery">
-      BIRTHDAY DELIVERY — FOR ALLIE
-    </div>
+    <input
+        id="passwordInput"
+        class="password-input"
+        type="password"
+        placeholder="Enter the password"
+        onkeydown="if(event.key==='Enter')checkPassword()"
+    >
 
-    <p>Are you Allie?</p>
+    <p class="hint">
+        Hint: <b>your birthday</b>
+    </p>
 
-    <button class="main-btn" onclick="showPage('package')">
-      Yes, that's me
+    <p id="passwordError" class="error">
+        Nope 😭 Try again.
+    </p>
+
+    <button
+        class="main-btn"
+        onclick="checkPassword()">
+        UNLOCK ♡
     </button>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- PACKAGE -->
+<!-- OPENING -->
 
-<section id="package" class="page">
+<section id="opening">
 
-  <div class="card center">
+<div class="card">
 
-    <div class="cat-area">
+    <img
+        src="assets/cat1.png"
+        class="opening-cat"
+        alt="cat sticker"
+    >
 
-      <img
-        class="cat"
-        src="https://media.tenor.com/2roX3uxz_68AAAAi/cat-cute.gif"
-        alt="cat">
-
-    </div>
-
-    <p class="small">delivery confirmed.</p>
-
-    <h2>Your birthday package has arrived.</h2>
-
-    <p>
-      I couldn't exactly send you a real gift through the screen,
-      so I had to improvise.
+    <p class="small">
+        meow.
     </p>
 
+    <h1>
+        A little birthday thing<br>
+        for Allie.
+    </h1>
+
     <p>
-      Hopefully this counts.
+        I made something for you.
+        <br>
+        Please don't judge the cat.
     </p>
 
-    <button class="main-btn" onclick="showPage('home')">
-      Open the package
+    <button
+        class="main-btn"
+        onclick="showPage('home')">
+        OPEN IT →
     </button>
 
-  </div>
+</div>
 
 </section>
 
 
 <!-- HOME -->
 
-<section id="home" class="page">
+<section id="home">
 
-  <div class="card home">
+<div class="card home-content">
 
-    <div class="cat-area">
+    <img
+        src="assets/cat5.png"
+        class="home-cat"
+        alt="cat sticker"
+    >
 
-      <img
-        class="cat"
-        src="https://media.tenor.com/2roX3uxz_68AAAAi/cat-cute.gif"
-        alt="cat">
+    <h1>
+        Happy Birthday, Allie.
+    </h1>
+
+    <p>
+        Welcome to your little birthday corner.
+    </p>
+
+    <p>
+        I couldn't send you an actual gift through the screen,
+        so I made this instead.
+    </p>
+
+
+    <!-- 💐 ACTUAL BOUQUET EMOJI -->
+
+    <div class="flower-area">
+
+        <div class="emoji-bouquet">
+            💐
+        </div>
 
     </div>
 
-    <h2>
-      Happy birthday, <span class="blue">Allie.</span>
-    </h2>
-
     <p>
-      Welcome to your little corner of the internet.
+        A little bouquet because flowers seemed appropriate.
     </p>
 
-    <p>
-      I couldn't send you an actual gift,
-      so I made this instead.
-    </p>
 
-    <p>
-      It's not perfect, but I made it for you.
-    </p>
+    <!-- CHOICES -->
 
     <div class="menu">
 
-      <div class="menu-item" onclick="showPage('letter')">
-        <strong>Letter</strong>
-        <span>something I actually wanted to say</span>
-      </div>
+        <div
+            class="menu-card"
+            onclick="showPage('letterPage')">
 
-      <div class="menu-item" onclick="showPage('music')">
-        <strong>Songs</strong>
-        <span>a little soundtrack for today</span>
-      </div>
+            <img src="assets/cat2.png">
 
-      <div class="menu-item" onclick="showPage('thoughts')">
-        <strong>Thoughts</strong>
-        <span>some random things I wanted you to know</span>
-      </div>
+            <h3>
+                A Letter
+            </h3>
 
-      <div class="menu-item" onclick="showPage('gift')">
-        <strong>Final gift</strong>
-        <span>save this one for last</span>
-      </div>
+            <p>
+                Things I wanted to say to you.
+            </p>
+
+        </div>
+
+
+        <div
+            class="menu-card"
+            onclick="showPage('musicPage')">
+
+            <img src="assets/cat3.png">
+
+            <h3>
+                A Song
+            </h3>
+
+            <p>
+                Something I wanted to include here.
+            </p>
+
+        </div>
+
+
+        <div
+            class="menu-card"
+            onclick="showPage('thoughtPage')">
+
+            <img src="assets/cat6.png">
+
+            <h3>
+                Random Thoughts
+            </h3>
+
+            <p>
+                A few things I wanted you to know.
+            </p>
+
+        </div>
+
+
+        <div
+            class="menu-card"
+            onclick="showPage('animationPage')">
+
+            <img src="assets/cat8.png">
+
+            <h3>
+                Animation 🎂
+            </h3>
+
+            <p>
+                A little birthday surprise.
+            </p>
+
+        </div>
+
+
+        <div
+            class="menu-card"
+            onclick="showPage('finalPage')">
+
+            <img src="assets/cat8.png">
+
+            <h3>
+                One Last Thing
+            </h3>
+
+            <p>
+                Save this one for last.
+            </p>
+
+        </div>
 
     </div>
 
-  </div>
+</div>
 
 </section>
 
 
 <!-- LETTER -->
 
-<section id="letter" class="page">
+<section id="letterPage">
 
-  <div class="card">
-
-    <h2>A letter for you</h2>
+<div class="card">
 
     <div class="letter">
 
-      <p>hellow Allie :D</p>
+        <img
+            src="assets/cat7.png"
+            class="letter-cat"
+            alt="cat sticker"
+        >
 
-      <p>Happy birthday!!</p>
+        <h2>
+            Hello there, Allie.
+        </h2>
 
-      <p>
-        I honestly wasn't sure what to write because I'm
-        terrible at making birthday messages sound normal.
-      </p>
+        <p>
+            Gusto lang kitang batiin ng happy birthday.
+            Alam mo, I'm genuinely really happy that I met you,
+            kahit online lang and through a screen.
+            I'm really glad that I have YOU.
+            You're honestly one of my favorite people I've met online,
+            and I'm really grateful that you became such a great friend to me.
+        </p>
 
-      <p>
-        I just didn't want to send you the usual
-        "happy birthday" and leave it at that,
-        so I made this little website instead.
-      </p>
+        <p>
+            Yung mga pag-uusap natin, especially yung mga random and funny
+            things we talk about, always manage to make me smile.
+            Masaya talaga ako tuwing kausap kita.
+            I feel like I can be myself whenever I'm talking to you,
+            and I really appreciate that because I don't feel like I have
+            to pretend or act differently around you.
+        </p>
 
-      <p>
-        It's kinda crazy that we literally met online
-        and somehow ended up becoming friends.
-        I never really expected we'd talk this much,
-        but I'm genuinely glad we did.
-      </p>
+        <p>
+            Birthday mo na ngayon, so I really hope you have a happy day.
+            Ngumiti ka, kumain ka nang mabuti, enjoy yourself,
+            and do the things that make you happy.
+            And if you ever feel sad or things get difficult,
+            please remember that I'm always here.
+            You can always talk to me whenever you need someone.
+        </p>
 
-      <p>
-        I really appreciate all the random conversations
-        we've had, even the completely stupid ones.
-        Somehow those end up being some of the funniest.
-      </p>
+                <p>
+            Do you know I still remember the day you first talked to me
+            on Instagram? I still remember it, even though I completely
+            forgot what our conversation was about.
+            I just remember that you said goodbye pretty quickly because
+            you were going to sleep.
+            And I still remember that you saw how down I was back then.
+            Honestly, I thought we probably wouldn't talk again after that.
+            But then I opened your story and replied to it,
+            and somehow, doon na nagsimula yung madalas nating pag-uusap.
+            I'm really glad I replied because I ended up meeting someone
+            I genuinely enjoy talking to.
+        </p>
 
-      <p>
-        I hope this year gives you more reasons to smile,
-        more things to look forward to,
-        and hopefully a lot less bullshit.
-      </p>
+        <p>
+            And I was really happy that you never ghosted me.
+            Please keep being yourself, Allie.
+            Keep being silly, keep being you, and keep sending me those
+            random reels.
+            I actually watch all the reels you send me because I want to
+            know what's in them.
+            Maybe somewhere in those random reels, I can also see a little
+            bit of you.
+            The things that make you laugh, the things you like,
+            the things you're interested in, and the little things that
+            make you happy.
+            That's why I watch them all.
+        </p>
 
-      <p>
-        I'm really glad I met you,
-        and I'm really glad we became friends.
-      </p>
+        <p>
+            I hope we stay friends for a really long time.
+            Sana walang iwanan.
+            I hope we can keep talking, laughing, sending each other
+            random things, and just being ourselves around each other
+            for a long time.
+            And even if you ever get mad at me someday,
+            I hope we can still work things out and remain friends.
+        </p>
 
-      <p>
-        I hope we stay friends for a really,
-        really long time.
-      </p>
+        <p>
+            I hope you can do that because, honestly,
+            I can't imagine just losing you and never talking to you again.
+            This probably sounds dramatic, but yeah,
+            I really don't want to lose you, Allie.
+            You've become someone I genuinely care about,
+            and I'm really grateful that I got to meet you.
+        </p>
 
-      <p>
-        Anyway, I'm going to stop before this turns
-        into an entire essay.
-      </p>
+        <p>
+            That's it.
+            Happy birthday, Allie.
+            I hope you have a really good day,
+            and I hope you continue to find more things that make you happy.
+            Keep being yourself, keep being silly,
+            and please don't ever feel like you have to change who you are.
+        </p>
 
-      <p>
-        Happy birthday again, Allie.
-      </p>
-
-      <p class="signature">
-        — shen
-      </p>
+        <p class="signature">
+            — shen
+        </p>
 
     </div>
 
-    <button class="back" onclick="showPage('home')">
-      Back
-    </button>
-
-  </div>
+</div>
 
 </section>
 
 
 <!-- MUSIC -->
 
-<section id="music" class="page">
+<section id="musicPage">
 
-  <div class="card music">
+<div class="card music">
 
-    <p class="small">today's soundtrack</p>
+    <img src="assets/cat4.png"
+         class="music-cat"
+         alt="cat sticker">
 
-    <h2>For the First Time</h2>
+    <h2>Today's Song</h2>
 
-    <p>
-      Mac DeMarco
-    </p>
+    <div class="song-box">
 
-    <div class="record" id="record">
-      ♪
+        <div class="song-title">
+            Mac DeMarco — Heart To Heart
+        </div>
+
+        <p>
+            I wanted this song to be part of this little birthday thing too.
+        </p>
+
+        <button class="main-btn"
+                onclick="showLyrics()">
+            ▶ PLAY
+        </button>
+
+        <div id="lyrics" class="lyrics">
+
+            To all the days we were together<br>
+            To all the time we were apart<br>
+            Of each other's lives<br>
+            Heart to heart
+
+        </div>
+
     </div>
 
-    <p>
-      I don't know why, but this song always felt
-      like it belonged here.
-    </p>
-
-    <button class="main-btn" onclick="playSong()">
-      Play
-    </button>
-
-    <div class="lyrics" id="lyrics">
-
-      <p>To all the days we were together</p>
-
-      <p>To all the time we were apart</p>
-
-      <p>Of each other's lives</p>
-
-      <p>Heart to heart</p>
-
-    </div>
-
-    <button class="back" onclick="showPage('home')">
-      Back
-    </button>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- THOUGHTS -->
+<!-- RANDOM THOUGHTS -->
 
-<section id="thoughts" class="page">
+<section id="thoughtPage">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Things I wanted you to know</h2>
+    <h2>Random Thoughts</h2>
+
+    <p>
+        Things I wanted you to know.
+    </p>
 
     <div class="thoughts">
 
-      <div class="thought">
-        I'm really glad I met you.
-      </div>
+        <div class="thought">
 
-      <div class="thought">
-        I hope you know you're appreciated.
-      </div>
+            <img src="assets/cat5.png">
 
-      <div class="thought">
-        I hope we stay friends for a really long time.
-      </div>
+            <p>
+                I'm really glad I met you.
+            </p>
 
-      <div class="thought">
-        I hope this year is good to you.
-      </div>
+        </div>
 
-      <div class="thought">
-        Keep being your silly self.
-      </div>
+        <div class="thought">
 
-      <div class="thought">
-        I'm lucky to have you as a friend.
-      </div>
+            <img src="assets/cat2.png">
+
+            <p>
+                I hope you know you're appreciated.
+            </p>
+
+        </div>
+
+        <div class="thought">
+
+            <img src="assets/cat6.png">
+
+            <p>
+                I hope we stay friends for a long time.
+            </p>
+
+        </div>
+
+        <div class="thought">
+
+            <img src="assets/cat1.png">
+
+            <p>
+                I hope this year is good to you.
+            </p>
+
+        </div>
+
+        <div class="thought">
+
+            <img src="assets/cat3.png">
+
+            <p>
+                Keep being your silly self.
+            </p>
+
+        </div>
+
+        <div class="thought">
+
+            <img src="assets/cat7.png">
+
+            <p>
+                I'm lucky to have you as a friend.
+            </p>
+
+        </div>
 
     </div>
 
-    <button class="back" onclick="showPage('home')">
-      Back
-    </button>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- GIFT -->
+<!-- ANIMATION -->
 
-<section id="gift" class="page">
+<section id="animationPage">
 
-  <div class="card gift-page">
+<div class="card animation-page">
 
-    <p class="small">one last thing</p>
-
-    <h2>There's something here for you.</h2>
-
-    <div
-      class="gift"
-      onclick="openGift()"
-      id="giftBox">
-      🎁
-    </div>
+    <h2>Birthday Surprise 🎂</h2>
 
     <p>
-      Take your time.
+        Okay, this one is for you. ♡
     </p>
 
-    <button class="main-btn" onclick="openGift()">
-      Open it
+    <div class="birthday-scene">
+
+        <div class="balloon balloon1"></div>
+        <div class="balloon balloon2"></div>
+        <div class="balloon balloon3"></div>
+        <div class="balloon balloon4"></div>
+
+        <div class="confetti c1"></div>
+        <div class="confetti c2"></div>
+        <div class="confetti c3"></div>
+        <div class="confetti c4"></div>
+        <div class="confetti c5"></div>
+
+        <div class="birthday-text">
+            <h2>Happy Birthday, Allie! ♡</h2>
+            <p>Look at all these little cats celebrating with you 😭</p>
+        </div>
+
+        <div class="cake">
+
+            <div class="candle candle1">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle candle2">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle candle3">
+                <div class="flame"></div>
+            </div>
+
+        </div>
+
+        <img src="assets/cat8.png"
+             class="bouquet-cat"
+             alt="cat holding flowers">
+
+        <div class="party-cats">
+
+            <img src="assets/cat1.png"
+                 class="party-cat">
+
+            <img src="assets/cat5.png"
+                 class="party-cat">
+
+            <img src="assets/cat3.png"
+                 class="party-cat">
+
+        </div>
+
+    </div>
+
+    <button class="back-btn"
+            onclick="showPage('home')">
+        ← Back to choices
     </button>
 
-    <div class="final" id="final">
+</div>
 
-      <h2>Happy birthday, Allie.</h2>
+</section>
 
-      <p>
+
+<!-- FINAL -->
+
+<section id="finalPage">
+
+<div class="card final">
+
+    <img src="assets/cat8.png"
+         class="final-cat"
+         alt="cat sticker">
+
+    <h2>One last thing.</h2>
+
+    <p>
         I know this is just a little website,
         but I really wanted to make something for you.
-      </p>
+    </p>
 
-      <p>
+    <p>
         I'm genuinely happy that we met,
         even if it was through a screen.
-      </p>
+    </p>
 
-      <p>
+    <p>
         Thank you for all the random conversations,
         the laughs, and all the little moments we've shared.
-      </p>
+    </p>
 
-      <p>
+    <p>
         I hope you have a really good birthday
-        and that this year gives you plenty of reasons
-        to be happy.
-      </p>
+        and that this year brings you a lot of happiness.
+    </p>
 
-      <p>
-        And whenever you're having a bad day,
-        I hope you remember that someone out there
-        is genuinely happy that you're here.
-      </p>
-
-      <p>
-        So go enjoy your birthday.
-        Eat something good.
-        Have fun.
-        Laugh a lot.
-      </p>
-
-      <p>
+    <p>
         I'm really glad I met you, Allie.
-      </p>
+        And I hope we get to stay friends
+        for a really long time.
+    </p>
 
-      <button class="main-btn" onclick="showPage('last')">
-        One more thing
-      </button>
+    <div class="flower-area final-flower">
+
+        <div class="bouquet">
+
+            <div class="stem"></div>
+
+            <div class="flower f1"></div>
+            <div class="flower f2"></div>
+            <div class="flower f3"></div>
+            <div class="flower f4"></div>
+            <div class="flower f5"></div>
+
+            <div class="ribbon"></div>
+
+        </div>
 
     </div>
 
-  </div>
+    <button class="main-btn"
+            onclick="showLabu()">
+        one more click
+    </button>
 
-</section>
-
-
-<!-- LAST -->
-
-<section id="last" class="page">
-
-  <div class="card last">
-
-    <div class="last-heart">
-      ♥
+    <div id="labu" class="labu">
+        labu
     </div>
 
-    <h2>
-      That's all.
-    </h2>
-
-    <p>
-      I hope this little website made you smile,
-      even just for a moment.
-    </p>
-
-    <p>
-      Thank you for being part of my life
-      and for all the memories we've made so far.
-    </p>
-
-    <p>
-      Here's to more random conversations,
-      stupid jokes, and good memories.
-    </p>
-
-    <p>
-      Happy birthday, Allie.
-    </p>
-
-    <div class="labu">
-      labu
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
 <script>
 
-function showPage(id) {
+/* PAGE SWITCHING */
 
-  document.querySelectorAll(".page").forEach(page => {
-    page.classList.remove("active");
-  });
+function showPage(page){
 
-  const page = document.getElementById(id);
-
-  if (page) {
-    page.classList.add("active");
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+    document.querySelectorAll("section").forEach(section => {
+        section.classList.remove("active");
     });
-  }
+
+    const selectedPage = document.getElementById(page);
+
+    if(selectedPage){
+        selectedPage.classList.add("active");
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+    }
+}
+
+
+/* PASSWORD */
+
+function checkPassword(){
+
+    const input = document.getElementById("passwordInput");
+    const error = document.getElementById("passwordError");
+
+    if(input.value === "122510"){
+
+        error.style.display = "none";
+
+        showPage("opening");
+
+    }else{
+
+        error.style.display = "block";
+
+        input.value = "";
+
+        input.focus();
+
+    }
 
 }
 
 
-/* MUSIC */
+/* SONG */
 
-function playSong() {
+function showLyrics(){
 
-  const record = document.getElementById("record");
-  const lyrics = document.getElementById("lyrics");
+    const lyrics = document.getElementById("lyrics");
 
-  record.classList.add("playing");
-  lyrics.classList.add("show");
-
-  createConfetti(25);
+    lyrics.classList.toggle("show");
 
 }
 
 
-/* GIFT */
+/* FINAL MESSAGE */
 
-function openGift() {
+function showLabu(){
 
-  const box = document.getElementById("giftBox");
-  const final = document.getElementById("final");
+    const labu = document.getElementById("labu");
 
-  box.style.transform = "scale(1.4) rotate(8deg)";
-
-  setTimeout(() => {
-    box.style.display = "none";
-    final.classList.add("show");
-    createConfetti(80);
-  }, 500);
+    labu.classList.add("show");
 
 }
 
 
-/* CONFETTI */
+/* BACK TO HOME WHEN USING BROWSER BACK */
 
-function createConfetti(amount) {
+window.addEventListener("load", function(){
 
-  const colors = [
-    "#c9233d",
-    "#e44b61",
-    "#3478c5",
-    "#6ba5e6",
-    "#ffb3c1",
-    "#ffffff"
-  ];
+    showPage("passwordPage");
 
-  for (let i = 0; i < amount; i++) {
-
-    const piece = document.createElement("div");
-
-    piece.className = "confetti";
-
-    piece.style.left =
-      Math.random() * 100 + "vw";
-
-    piece.style.background =
-      colors[Math.floor(Math.random() * colors.length)];
-
-    piece.style.animationDuration =
-      (2 + Math.random() * 2.5) + "s";
-
-    piece.style.animationDelay =
-      Math.random() * .8 + "s";
-
-    piece.style.transform =
-      "rotate(" + Math.random() * 360 + "deg)";
-
-    document.body.appendChild(piece);
-
-    setTimeout(() => {
-      piece.remove();
-    }, 5000);
-
-  }
-
-}
-
-
-/* occasional tiny confetti when opening */
-
-setTimeout(() => {
-  createConfetti(12);
-}, 1200);
+});
 
 </script>
 
